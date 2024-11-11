@@ -7,3 +7,4 @@
 1. [Задание 1](task1/Task1.md)
 2. [Задание 2](task2/Task2.md)
 3. [Задание 3](task3/Task3.md)
+4. [Задание 4](task4/Task4.md)

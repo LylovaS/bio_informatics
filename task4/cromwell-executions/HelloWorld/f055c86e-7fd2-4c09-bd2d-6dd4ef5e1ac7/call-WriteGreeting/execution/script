@@ -1,0 +1,40 @@
+#!/bin/bash
+
+cd /home/sophya/bio_informatics/bio_informatics/task4/cromwell-executions/HelloWorld/f055c86e-7fd2-4c09-bd2d-6dd4ef5e1ac7/call-WriteGreeting/execution
+tmpDir=$(mktemp -d "$PWD"/tmp.XXXXXX)
+
+export _JAVA_OPTIONS=-Djava.io.tmpdir="$tmpDir"
+export TMPDIR="$tmpDir"
+
+
+(
+cd /home/sophya/bio_informatics/bio_informatics/task4/cromwell-executions/HelloWorld/f055c86e-7fd2-4c09-bd2d-6dd4ef5e1ac7/call-WriteGreeting/execution
+
+)
+
+
+outf055c86e="${tmpDir}/out.$$" errf055c86e="${tmpDir}/err.$$"
+mkfifo "$outf055c86e" "$errf055c86e"
+trap 'rm "$outf055c86e" "$errf055c86e"' EXIT
+touch '/home/sophya/bio_informatics/bio_informatics/task4/cromwell-executions/HelloWorld/f055c86e-7fd2-4c09-bd2d-6dd4ef5e1ac7/call-WriteGreeting/execution/stdout' '/home/sophya/bio_informatics/bio_informatics/task4/cromwell-executions/HelloWorld/f055c86e-7fd2-4c09-bd2d-6dd4ef5e1ac7/call-WriteGreeting/execution/stderr'
+tee '/home/sophya/bio_informatics/bio_informatics/task4/cromwell-executions/HelloWorld/f055c86e-7fd2-4c09-bd2d-6dd4ef5e1ac7/call-WriteGreeting/execution/stdout' < "$outf055c86e" &
+tee '/home/sophya/bio_informatics/bio_informatics/task4/cromwell-executions/HelloWorld/f055c86e-7fd2-4c09-bd2d-6dd4ef5e1ac7/call-WriteGreeting/execution/stderr' < "$errf055c86e" >&2 &
+(
+cd /home/sophya/bio_informatics/bio_informatics/task4/cromwell-executions/HelloWorld/f055c86e-7fd2-4c09-bd2d-6dd4ef5e1ac7/call-WriteGreeting/execution
+
+
+echo "Hello World"
+)  > "$outf055c86e" 2> "$errf055c86e"
+echo $? > /home/sophya/bio_informatics/bio_informatics/task4/cromwell-executions/HelloWorld/f055c86e-7fd2-4c09-bd2d-6dd4ef5e1ac7/call-WriteGreeting/execution/rc.tmp
+(
+# add a .file in every empty directory to facilitate directory delocalization on the cloud
+cd /home/sophya/bio_informatics/bio_informatics/task4/cromwell-executions/HelloWorld/f055c86e-7fd2-4c09-bd2d-6dd4ef5e1ac7/call-WriteGreeting/execution
+find . -type d -exec sh -c '[ -z "$(ls -A '"'"'{}'"'"')" ] && touch '"'"'{}'"'"'/.file' \;
+)
+(
+cd /home/sophya/bio_informatics/bio_informatics/task4/cromwell-executions/HelloWorld/f055c86e-7fd2-4c09-bd2d-6dd4ef5e1ac7/call-WriteGreeting/execution
+sync
+
+
+)
+mv /home/sophya/bio_informatics/bio_informatics/task4/cromwell-executions/HelloWorld/f055c86e-7fd2-4c09-bd2d-6dd4ef5e1ac7/call-WriteGreeting/execution/rc.tmp /home/sophya/bio_informatics/bio_informatics/task4/cromwell-executions/HelloWorld/f055c86e-7fd2-4c09-bd2d-6dd4ef5e1ac7/call-WriteGreeting/execution/rc

@@ -1,0 +1,6 @@
+{
+    "awesomePipeline.reference": "./hg38.fa",
+    "awesomePipeline.reads": "./SRR30901182.fastq",
+    "awesomePipeline.checkFlagstat": "./parseFlagstat.java"
+    
+}

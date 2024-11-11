@@ -1,0 +1,40 @@
+#!/bin/bash
+
+cd /home/sophya/bio_informatics/bio_informatics/task4/cromwell-executions/algorythmPipeline/b86770af-6316-4e1c-a581-4d6a30dc50a9/call-samtoolsTask2/execution
+tmpDir=$(mktemp -d "$PWD"/tmp.XXXXXX)
+
+export _JAVA_OPTIONS=-Djava.io.tmpdir="$tmpDir"
+export TMPDIR="$tmpDir"
+
+
+(
+cd /home/sophya/bio_informatics/bio_informatics/task4/cromwell-executions/algorythmPipeline/b86770af-6316-4e1c-a581-4d6a30dc50a9/call-samtoolsTask2/execution
+
+)
+
+
+outb86770af="${tmpDir}/out.$$" errb86770af="${tmpDir}/err.$$"
+mkfifo "$outb86770af" "$errb86770af"
+trap 'rm "$outb86770af" "$errb86770af"' EXIT
+touch '/home/sophya/bio_informatics/bio_informatics/task4/cromwell-executions/algorythmPipeline/b86770af-6316-4e1c-a581-4d6a30dc50a9/call-samtoolsTask2/execution/stdout' '/home/sophya/bio_informatics/bio_informatics/task4/cromwell-executions/algorythmPipeline/b86770af-6316-4e1c-a581-4d6a30dc50a9/call-samtoolsTask2/execution/stderr'
+tee '/home/sophya/bio_informatics/bio_informatics/task4/cromwell-executions/algorythmPipeline/b86770af-6316-4e1c-a581-4d6a30dc50a9/call-samtoolsTask2/execution/stdout' < "$outb86770af" &
+tee '/home/sophya/bio_informatics/bio_informatics/task4/cromwell-executions/algorythmPipeline/b86770af-6316-4e1c-a581-4d6a30dc50a9/call-samtoolsTask2/execution/stderr' < "$errb86770af" >&2 &
+(
+cd /home/sophya/bio_informatics/bio_informatics/task4/cromwell-executions/algorythmPipeline/b86770af-6316-4e1c-a581-4d6a30dc50a9/call-samtoolsTask2/execution
+
+
+samtools flagstat /home/sophya/bio_informatics/bio_informatics/task4/cromwell-executions/algorythmPipeline/b86770af-6316-4e1c-a581-4d6a30dc50a9/call-samtoolsTask2/inputs/-1180661070/aln.bam > rating.txt
+)  > "$outb86770af" 2> "$errb86770af"
+echo $? > /home/sophya/bio_informatics/bio_informatics/task4/cromwell-executions/algorythmPipeline/b86770af-6316-4e1c-a581-4d6a30dc50a9/call-samtoolsTask2/execution/rc.tmp
+(
+# add a .file in every empty directory to facilitate directory delocalization on the cloud
+cd /home/sophya/bio_informatics/bio_informatics/task4/cromwell-executions/algorythmPipeline/b86770af-6316-4e1c-a581-4d6a30dc50a9/call-samtoolsTask2/execution
+find . -type d -exec sh -c '[ -z "$(ls -A '"'"'{}'"'"')" ] && touch '"'"'{}'"'"'/.file' \;
+)
+(
+cd /home/sophya/bio_informatics/bio_informatics/task4/cromwell-executions/algorythmPipeline/b86770af-6316-4e1c-a581-4d6a30dc50a9/call-samtoolsTask2/execution
+sync
+
+
+)
+mv /home/sophya/bio_informatics/bio_informatics/task4/cromwell-executions/algorythmPipeline/b86770af-6316-4e1c-a581-4d6a30dc50a9/call-samtoolsTask2/execution/rc.tmp /home/sophya/bio_informatics/bio_informatics/task4/cromwell-executions/algorythmPipeline/b86770af-6316-4e1c-a581-4d6a30dc50a9/call-samtoolsTask2/execution/rc

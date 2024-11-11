@@ -1,0 +1,140 @@
+[2024-11-11 22:39:43,97] [info] Running with database db.url = jdbc:hsqldb:mem:9278acfe-4c8e-4bb3-9411-e6b6fead0490;shutdown=false;hsqldb.tx=mvcc
+[2024-11-11 22:39:46,89] [info] Running migration RenameWorkflowOptionsInMetadata with a read batch size of 100000 and a write batch size of 100000
+[2024-11-11 22:39:46,90] [info] [RenameWorkflowOptionsInMetadata] 100%
+[2024-11-11 22:39:47,03] [info] Running with database db.url = jdbc:hsqldb:mem:7a54418f-a0b9-477f-89eb-33658693b146;shutdown=false;hsqldb.tx=mvcc
+[2024-11-11 22:39:47,34] [info] Slf4jLogger started
+[2024-11-11 22:39:48,95] [info] Workflow heartbeat configuration:
+{
+  "cromwellId" : "cromid-b71c803",
+  "heartbeatInterval" : "2 minutes",
+  "ttl" : "10 minutes",
+  "failureShutdownDuration" : "5 minutes",
+  "writeBatchSize" : 10000,
+  "writeThreshold" : 10000
+}
+[2024-11-11 22:39:48,98] [info] Metadata summary refreshing every 1 second.
+[2024-11-11 22:39:48,98] [info] No metadata archiver defined in config
+[2024-11-11 22:39:48,98] [info] No metadata deleter defined in config
+[2024-11-11 22:39:49,00] [info] KvWriteActor configured to flush with batch size 200 and process rate 5 seconds.
+[2024-11-11 22:39:49,00] [info] WriteMetadataActor configured to flush with batch size 200 and process rate 5 seconds.
+[2024-11-11 22:39:49,02] [info] CallCacheWriteActor configured to flush with batch size 100 and process rate 3 seconds.
+[2024-11-11 22:39:49,26] [info] JobRestartCheckTokenDispenser - Distribution rate: 50 per 1 seconds.
+[2024-11-11 22:39:49,27] [info] JobExecutionTokenDispenser - Distribution rate: 20 per 10 seconds.
+[2024-11-11 22:39:49,29] [info] SingleWorkflowRunnerActor: Version 87
+[2024-11-11 22:39:49,30] [info] SingleWorkflowRunnerActor: Submitting workflow
+[2024-11-11 22:39:49,31] [info] Unspecified type (Unspecified version) workflow b86770af-6316-4e1c-a581-4d6a30dc50a9 submitted
+[2024-11-11 22:39:49,32] [info] SingleWorkflowRunnerActor: Workflow submitted [38;5;2mb86770af-6316-4e1c-a581-4d6a30dc50a9[0m
+[2024-11-11 22:39:49,33] [info] 1 new workflows fetched by cromid-b71c803: b86770af-6316-4e1c-a581-4d6a30dc50a9
+[2024-11-11 22:39:49,33] [info] WorkflowManagerActor: Starting workflow [38;5;2mb86770af-6316-4e1c-a581-4d6a30dc50a9[0m
+[2024-11-11 22:39:49,34] [info] WorkflowManagerActor: Successfully started WorkflowActor-b86770af-6316-4e1c-a581-4d6a30dc50a9
+[2024-11-11 22:39:49,34] [info] Retrieved 1 workflows from the WorkflowStoreActor
+[2024-11-11 22:39:49,35] [info] WorkflowStoreHeartbeatWriteActor configured to flush with batch size 10000 and process rate 2 minutes.
+[2024-11-11 22:39:49,41] [info] MaterializeWorkflowDescriptorActor [[38;5;2mb86770af[0m]: Parsing workflow as WDL 1.0
+[2024-11-11 22:39:49,76] [info] MaterializeWorkflowDescriptorActor [[38;5;2mb86770af[0m]: Call-to-Backend assignments: algorythmPipeline.samtoolsSortTask -> Local, algorythmPipeline.parseFlagstatTask -> Local, algorythmPipeline.echoTaskNOT_OK -> Local, algorythmPipeline.fastqcTask -> Local, algorythmPipeline.minimap2Task -> Local, algorythmPipeline.samtoolsTask1 -> Local, algorythmPipeline.echoTaskOK -> Local, algorythmPipeline.freeBayesTask -> Local, algorythmPipeline.samtoolsTask2 -> Local
+[2024-11-11 22:39:51,94] [info] WorkflowExecutionActor-b86770af-6316-4e1c-a581-4d6a30dc50a9 [[38;5;2mb86770af[0m]: Starting algorythmPipeline.fastqcTask, algorythmPipeline.minimap2Task
+[2024-11-11 22:39:54,27] [info] Not triggering log of restart checking token queue status. Effective log interval = None
+[2024-11-11 22:39:54,29] [info] Not triggering log of execution token queue status. Effective log interval = None
+[2024-11-11 22:39:59,30] [info] Assigned new job execution tokens to the following groups: b86770af: 2
+[2024-11-11 22:39:59,39] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2mb86770af[0malgorythmPipeline.fastqcTask:NA:1]: [38;5;5mfastqc /home/sophya/bio_informatics/bio_informatics/task4/cromwell-executions/algorythmPipeline/b86770af-6316-4e1c-a581-4d6a30dc50a9/call-fastqcTask/inputs/690192171/ERR12497130.fastq[0m
+[2024-11-11 22:39:59,39] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2mb86770af[0malgorythmPipeline.minimap2Task:NA:1]: [38;5;5mminimap2 -d ref.mmi /home/sophya/bio_informatics/bio_informatics/task4/cromwell-executions/algorythmPipeline/b86770af-6316-4e1c-a581-4d6a30dc50a9/call-minimap2Task/inputs/690192171/hg38.fa
+minimap2 -a "ref.mmi" /home/sophya/bio_informatics/bio_informatics/task4/cromwell-executions/algorythmPipeline/b86770af-6316-4e1c-a581-4d6a30dc50a9/call-minimap2Task/inputs/690192171/ERR12497130.fastq > aln.sam[0m
+[2024-11-11 22:39:59,41] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2mb86770af[0malgorythmPipeline.fastqcTask:NA:1]: executing: /bin/bash /home/sophya/bio_informatics/bio_informatics/task4/cromwell-executions/algorythmPipeline/b86770af-6316-4e1c-a581-4d6a30dc50a9/call-fastqcTask/execution/script
+[2024-11-11 22:39:59,41] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2mb86770af[0malgorythmPipeline.minimap2Task:NA:1]: executing: /bin/bash /home/sophya/bio_informatics/bio_informatics/task4/cromwell-executions/algorythmPipeline/b86770af-6316-4e1c-a581-4d6a30dc50a9/call-minimap2Task/execution/script
+[2024-11-11 22:40:04,02] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2mb86770af[0malgorythmPipeline.minimap2Task:NA:1]: job id: 27178
+[2024-11-11 22:40:04,03] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2mb86770af[0malgorythmPipeline.fastqcTask:NA:1]: job id: 27177
+[2024-11-11 22:40:04,03] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2mb86770af[0malgorythmPipeline.minimap2Task:NA:1]: Status change from - to WaitingForReturnCode
+[2024-11-11 22:40:04,03] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2mb86770af[0malgorythmPipeline.fastqcTask:NA:1]: Status change from - to Done
+[2024-11-11 22:41:25,52] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2mb86770af[0malgorythmPipeline.minimap2Task:NA:1]: Status change from WaitingForReturnCode to Done
+[2024-11-11 22:41:27,82] [info] WorkflowExecutionActor-b86770af-6316-4e1c-a581-4d6a30dc50a9 [[38;5;2mb86770af[0m]: Starting algorythmPipeline.samtoolsTask1
+[2024-11-11 22:41:33,79] [info] Assigned new job execution tokens to the following groups: b86770af: 1
+[2024-11-11 22:41:33,94] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2mb86770af[0malgorythmPipeline.samtoolsTask1:NA:1]: [38;5;5msamtools view -bS /home/sophya/bio_informatics/bio_informatics/task4/cromwell-executions/algorythmPipeline/b86770af-6316-4e1c-a581-4d6a30dc50a9/call-samtoolsTask1/inputs/1424716002/aln.sam > aln.bam[0m
+[2024-11-11 22:41:33,99] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2mb86770af[0malgorythmPipeline.samtoolsTask1:NA:1]: executing: /bin/bash /home/sophya/bio_informatics/bio_informatics/task4/cromwell-executions/algorythmPipeline/b86770af-6316-4e1c-a581-4d6a30dc50a9/call-samtoolsTask1/execution/script
+[2024-11-11 22:41:38,53] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2mb86770af[0malgorythmPipeline.samtoolsTask1:NA:1]: job id: 27840
+[2024-11-11 22:41:38,53] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2mb86770af[0malgorythmPipeline.samtoolsTask1:NA:1]: Status change from - to Done
+[2024-11-11 22:41:40,57] [info] WorkflowExecutionActor-b86770af-6316-4e1c-a581-4d6a30dc50a9 [[38;5;2mb86770af[0m]: Starting algorythmPipeline.samtoolsTask2
+[2024-11-11 22:41:43,79] [info] Assigned new job execution tokens to the following groups: b86770af: 1
+[2024-11-11 22:41:43,80] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2mb86770af[0malgorythmPipeline.samtoolsTask2:NA:1]: [38;5;5msamtools flagstat /home/sophya/bio_informatics/bio_informatics/task4/cromwell-executions/algorythmPipeline/b86770af-6316-4e1c-a581-4d6a30dc50a9/call-samtoolsTask2/inputs/-1180661070/aln.bam > rating.txt[0m
+[2024-11-11 22:41:43,81] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2mb86770af[0malgorythmPipeline.samtoolsTask2:NA:1]: executing: /bin/bash /home/sophya/bio_informatics/bio_informatics/task4/cromwell-executions/algorythmPipeline/b86770af-6316-4e1c-a581-4d6a30dc50a9/call-samtoolsTask2/execution/script
+[2024-11-11 22:41:48,51] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2mb86770af[0malgorythmPipeline.samtoolsTask2:NA:1]: job id: 27905
+[2024-11-11 22:41:48,53] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2mb86770af[0malgorythmPipeline.samtoolsTask2:NA:1]: Status change from - to Done
+[2024-11-11 22:41:49,75] [info] WorkflowExecutionActor-b86770af-6316-4e1c-a581-4d6a30dc50a9 [[38;5;2mb86770af[0m]: Starting algorythmPipeline.parseFlagstatTask
+[2024-11-11 22:41:53,79] [info] Assigned new job execution tokens to the following groups: b86770af: 1
+[2024-11-11 22:41:53,85] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2mb86770af[0malgorythmPipeline.parseFlagstatTask:NA:1]: [38;5;5m/home/sophya/bio_informatics/bio_informatics/task4/cromwell-executions/algorythmPipeline/b86770af-6316-4e1c-a581-4d6a30dc50a9/call-parseFlagstatTask/inputs/690192171/parsing_scrypt.sh < /home/sophya/bio_informatics/bio_informatics/task4/cromwell-executions/algorythmPipeline/b86770af-6316-4e1c-a581-4d6a30dc50a9/call-parseFlagstatTask/inputs/1317354867/rating.txt[0m
+[2024-11-11 22:41:54,32] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2mb86770af[0malgorythmPipeline.parseFlagstatTask:NA:1]: executing: /bin/bash /home/sophya/bio_informatics/bio_informatics/task4/cromwell-executions/algorythmPipeline/b86770af-6316-4e1c-a581-4d6a30dc50a9/call-parseFlagstatTask/execution/script
+[2024-11-11 22:41:58,51] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2mb86770af[0malgorythmPipeline.parseFlagstatTask:NA:1]: job id: 27968
+[2024-11-11 22:41:58,51] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2mb86770af[0malgorythmPipeline.parseFlagstatTask:NA:1]: Status change from - to Done
+[2024-11-11 22:42:01,00] [info] WorkflowExecutionActor-b86770af-6316-4e1c-a581-4d6a30dc50a9 [[38;5;2mb86770af[0m]: Starting algorythmPipeline.echoTaskOK
+[2024-11-11 22:42:02,02] [info] WorkflowExecutionActor-b86770af-6316-4e1c-a581-4d6a30dc50a9 [[38;5;2mb86770af[0m]: Starting algorythmPipeline.samtoolsSortTask
+[2024-11-11 22:42:05,29] [info] Assigned new job execution tokens to the following groups: b86770af: 2
+[2024-11-11 22:42:05,30] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2mb86770af[0malgorythmPipeline.echoTaskOK:NA:1]: [38;5;5mecho "OK"[0m
+[2024-11-11 22:42:05,31] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2mb86770af[0malgorythmPipeline.echoTaskOK:NA:1]: executing: /bin/bash /home/sophya/bio_informatics/bio_informatics/task4/cromwell-executions/algorythmPipeline/b86770af-6316-4e1c-a581-4d6a30dc50a9/call-echoTaskOK/execution/script
+[2024-11-11 22:42:05,31] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2mb86770af[0malgorythmPipeline.samtoolsSortTask:NA:1]: [38;5;5msamtools sort /home/sophya/bio_informatics/bio_informatics/task4/cromwell-executions/algorythmPipeline/b86770af-6316-4e1c-a581-4d6a30dc50a9/call-samtoolsSortTask/inputs/-1180661070/aln.bam -o aln_sorted.bam[0m
+[2024-11-11 22:42:05,31] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2mb86770af[0malgorythmPipeline.samtoolsSortTask:NA:1]: executing: /bin/bash /home/sophya/bio_informatics/bio_informatics/task4/cromwell-executions/algorythmPipeline/b86770af-6316-4e1c-a581-4d6a30dc50a9/call-samtoolsSortTask/execution/script
+[2024-11-11 22:42:10,02] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2mb86770af[0malgorythmPipeline.echoTaskOK:NA:1]: job id: 28023
+[2024-11-11 22:42:10,02] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2mb86770af[0malgorythmPipeline.samtoolsSortTask:NA:1]: job id: 28028
+[2024-11-11 22:42:10,02] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2mb86770af[0malgorythmPipeline.echoTaskOK:NA:1]: Status change from - to Done
+[2024-11-11 22:42:10,02] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2mb86770af[0malgorythmPipeline.samtoolsSortTask:NA:1]: Status change from - to Done
+[2024-11-11 22:42:11,68] [info] WorkflowExecutionActor-b86770af-6316-4e1c-a581-4d6a30dc50a9 [[38;5;2mb86770af[0m]: Starting algorythmPipeline.freeBayesTask
+[2024-11-11 22:42:15,29] [info] Assigned new job execution tokens to the following groups: b86770af: 1
+[2024-11-11 22:42:15,30] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2mb86770af[0malgorythmPipeline.freeBayesTask:NA:1]: [38;5;5mfreebayes -f /home/sophya/bio_informatics/bio_informatics/task4/cromwell-executions/algorythmPipeline/b86770af-6316-4e1c-a581-4d6a30dc50a9/call-freeBayesTask/inputs/690192171/hg38.fa /home/sophya/bio_informatics/bio_informatics/task4/cromwell-executions/algorythmPipeline/b86770af-6316-4e1c-a581-4d6a30dc50a9/call-freeBayesTask/inputs/-1785075569/aln_sorted.bam > freebayes.vcf[0m
+[2024-11-11 22:42:15,30] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2mb86770af[0malgorythmPipeline.freeBayesTask:NA:1]: executing: /bin/bash /home/sophya/bio_informatics/bio_informatics/task4/cromwell-executions/algorythmPipeline/b86770af-6316-4e1c-a581-4d6a30dc50a9/call-freeBayesTask/execution/script
+[2024-11-11 22:42:20,01] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2mb86770af[0malgorythmPipeline.freeBayesTask:NA:1]: job id: 28100
+[2024-11-11 22:42:20,01] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2mb86770af[0malgorythmPipeline.freeBayesTask:NA:1]: Status change from - to WaitingForReturnCode
+[2024-11-11 22:48:46,93] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2mb86770af[0malgorythmPipeline.freeBayesTask:NA:1]: Status change from WaitingForReturnCode to Done
+[2024-11-11 22:48:50,16] [info] WorkflowExecutionActor-b86770af-6316-4e1c-a581-4d6a30dc50a9 [[38;5;2mb86770af[0m]: Workflow algorythmPipeline complete. Final Outputs:
+{
+  "algorythmPipeline.minimap2Task.out": "/home/sophya/bio_informatics/bio_informatics/task4/cromwell-executions/algorythmPipeline/b86770af-6316-4e1c-a581-4d6a30dc50a9/call-minimap2Task/execution/aln.sam",
+  "algorythmPipeline.echoTaskNOT_OK.out": null,
+  "algorythmPipeline.freeBayesTask.out": "/home/sophya/bio_informatics/bio_informatics/task4/cromwell-executions/algorythmPipeline/b86770af-6316-4e1c-a581-4d6a30dc50a9/call-freeBayesTask/execution/./freebayes.vcf",
+  "algorythmPipeline.samtoolsSortTask.out": "/home/sophya/bio_informatics/bio_informatics/task4/cromwell-executions/algorythmPipeline/b86770af-6316-4e1c-a581-4d6a30dc50a9/call-samtoolsSortTask/execution/./aln_sorted.bam",
+  "algorythmPipeline.echoTaskOK.out": "/home/sophya/bio_informatics/bio_informatics/task4/cromwell-executions/algorythmPipeline/b86770af-6316-4e1c-a581-4d6a30dc50a9/call-echoTaskOK/execution/stdout",
+  "algorythmPipeline.parseFlagstatTask.out": 99.91,
+  "algorythmPipeline.samtoolsTask1.alnBam": "/home/sophya/bio_informatics/bio_informatics/task4/cromwell-executions/algorythmPipeline/b86770af-6316-4e1c-a581-4d6a30dc50a9/call-samtoolsTask1/execution/aln.bam",
+  "algorythmPipeline.samtoolsTask2.flagstat": "/home/sophya/bio_informatics/bio_informatics/task4/cromwell-executions/algorythmPipeline/b86770af-6316-4e1c-a581-4d6a30dc50a9/call-samtoolsTask2/execution/rating.txt"
+}
+[2024-11-11 22:48:53,00] [info] WorkflowManagerActor: Workflow actor for b86770af-6316-4e1c-a581-4d6a30dc50a9 completed with status 'Succeeded'. The workflow will be removed from the workflow store.
+[2024-11-11 22:49:54,41] [info] SingleWorkflowRunnerActor workflow finished with status 'Succeeded'.
+{
+  "outputs": {
+    "algorythmPipeline.minimap2Task.out": "/home/sophya/bio_informatics/bio_informatics/task4/cromwell-executions/algorythmPipeline/b86770af-6316-4e1c-a581-4d6a30dc50a9/call-minimap2Task/execution/aln.sam",
+    "algorythmPipeline.echoTaskNOT_OK.out": null,
+    "algorythmPipeline.freeBayesTask.out": "/home/sophya/bio_informatics/bio_informatics/task4/cromwell-executions/algorythmPipeline/b86770af-6316-4e1c-a581-4d6a30dc50a9/call-freeBayesTask/execution/./freebayes.vcf",
+    "algorythmPipeline.samtoolsSortTask.out": "/home/sophya/bio_informatics/bio_informatics/task4/cromwell-executions/algorythmPipeline/b86770af-6316-4e1c-a581-4d6a30dc50a9/call-samtoolsSortTask/execution/./aln_sorted.bam",
+    "algorythmPipeline.echoTaskOK.out": "/home/sophya/bio_informatics/bio_informatics/task4/cromwell-executions/algorythmPipeline/b86770af-6316-4e1c-a581-4d6a30dc50a9/call-echoTaskOK/execution/stdout",
+    "algorythmPipeline.parseFlagstatTask.out": 99.91,
+    "algorythmPipeline.samtoolsTask1.alnBam": "/home/sophya/bio_informatics/bio_informatics/task4/cromwell-executions/algorythmPipeline/b86770af-6316-4e1c-a581-4d6a30dc50a9/call-samtoolsTask1/execution/aln.bam",
+    "algorythmPipeline.samtoolsTask2.flagstat": "/home/sophya/bio_informatics/bio_informatics/task4/cromwell-executions/algorythmPipeline/b86770af-6316-4e1c-a581-4d6a30dc50a9/call-samtoolsTask2/execution/rating.txt"
+  },
+  "id": "b86770af-6316-4e1c-a581-4d6a30dc50a9"
+}
+[2024-11-11 22:49:54,56] [info] Workflow polling stopped
+[2024-11-11 22:49:54,68] [info] 0 workflows released by cromid-b71c803
+[2024-11-11 22:49:54,68] [info] Shutting down WorkflowStoreActor - Timeout = 5 seconds
+[2024-11-11 22:49:54,68] [info] Shutting down WorkflowLogCopyRouter - Timeout = 5 seconds
+[2024-11-11 22:49:54,69] [info] Aborting all running workflows.
+[2024-11-11 22:49:54,69] [info] WorkflowStoreActor stopped
+[2024-11-11 22:49:54,69] [info] Shutting down JobExecutionTokenDispenser - Timeout = 5 seconds
+[2024-11-11 22:49:54,69] [info] JobExecutionTokenDispenser stopped
+[2024-11-11 22:49:54,71] [info] WorkflowLogCopyRouter stopped
+[2024-11-11 22:49:54,71] [info] Shutting down WorkflowManagerActor - Timeout = 3600 seconds
+[2024-11-11 22:49:54,71] [info] WorkflowManagerActor: All workflows finished
+[2024-11-11 22:49:54,71] [info] WorkflowManagerActor stopped
+[2024-11-11 22:49:56,55] [info] Connection pools shut down
+[2024-11-11 22:49:56,55] [info] Shutting down SubWorkflowStoreActor - Timeout = 1800 seconds
+[2024-11-11 22:49:56,55] [info] Shutting down JobStoreActor - Timeout = 1800 seconds
+[2024-11-11 22:49:56,55] [info] SubWorkflowStoreActor stopped
+[2024-11-11 22:49:56,56] [info] Shutting down CallCacheWriteActor - Timeout = 1800 seconds
+[2024-11-11 22:49:56,56] [info] Shutting down ServiceRegistryActor - Timeout = 1800 seconds
+[2024-11-11 22:49:56,56] [info] Shutting down DockerHashActor - Timeout = 1800 seconds
+[2024-11-11 22:49:56,56] [info] Shutting down IoProxy - Timeout = 1800 seconds
+[2024-11-11 22:49:56,56] [info] JobStoreActor stopped
+[2024-11-11 22:49:56,56] [info] CallCacheWriteActor Shutting down: 0 queued messages to process
+[2024-11-11 22:49:56,56] [info] CallCacheWriteActor stopped
+[2024-11-11 22:49:56,56] [info] WriteMetadataActor Shutting down: 0 queued messages to process
+[2024-11-11 22:49:56,56] [info] KvWriteActor Shutting down: 0 queued messages to process
+[2024-11-11 22:49:56,56] [info] IoProxy stopped
+[2024-11-11 22:49:56,56] [info] ServiceRegistryActor stopped
+[2024-11-11 22:49:56,58] [info] DockerHashActor stopped
+[2024-11-11 22:49:56,84] [info] Database closed
+[2024-11-11 22:49:56,84] [info] Stream materializer shut down
+[2024-11-11 22:49:56,90] [info] WDL HTTP import resolver closed

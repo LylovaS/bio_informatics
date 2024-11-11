@@ -1,0 +1,5 @@
+{
+    "algorythmPipeline.reference": "./hg38.fa",
+    "algorythmPipeline.file": "./ERR12497130.fastq",
+    "algorythmPipeline.parse_scrypt": "parsing_scrypt.sh"
+}
